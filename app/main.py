@@ -5,10 +5,10 @@ from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
 
 # Import local modules
-import models, schemas
-from database import SessionLocal, engine
-from auth import verify_token
-from llm import generate_summary
+import app.models as models, app.schemas as schemas
+from app.database import SessionLocal, engine
+from app.auth import verify_token
+from app.llm import generate_summary
 
 # Create database tables
 models.Base.metadata.create_all(bind=engine)
